@@ -30,7 +30,7 @@ def _converthtmlentities(msg):
         s = s.group(0)[1:-1] # remove & and ;
         if s[0] == '#':
             try:
-                return unichr(int(s[2:],16) if s[1] in 'xX' else int(s[1:]))
+                return chr(int(s[2:],16) if s[1] in 'xX' else int(s[1:]))
             except ValueError:
                 return '&#' + s + ';'
         else:
